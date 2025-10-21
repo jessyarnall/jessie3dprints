@@ -2,84 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jessie 3D Prints</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap');
+
     :root {
-      --dark-blue: #213555;
-      --medium-blue: #3e5879;
-      --tan: #d8c4b6;
-      --light-beige: #f5efe7;
+      --bg: #0e0e0e;
+      --accent: #00e0ff;
+      --text: #f1f1f1;
+      --muted: #888;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(45deg, var(--dark-blue), var(--medium-blue));
-      color: var(--light-beige);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
     }
-    .intro-text {
-      font-size: 1.25rem;
-      margin-bottom: 20px;
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      max-width: 600px;
-      color: var(--tan);
     }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--light-beige);
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .links-container {
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-shadow: 0 0 8px var(--accent);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    .hero {
       display: flex;
       flex-direction: column;
-      gap: 15px; /* Reduced gap between buttons */
-      width: 100%;
-      max-width: 300px; /* Thinner container for buttons */
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      padding: 6rem 2rem;
     }
-    .link-button {
-      display: block;
-      width: 100%;
-      font-size: 1.15rem; /* Slightly smaller font size */
-      font-weight: 400;
-      color: var(--tan);
-      text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 2px solid var(--tan);
-      padding: 12px 20px; /* Thinner padding */
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
+
+    .hero img {
+      max-width: 220px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px var(--accent));
     }
-    .link-button:hover {
-      background-color: var(--light-beige);
-      color: var(--dark-blue);
-      border-color: var(--light-beige);
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      color: var(--bg);
+      background: var(--accent);
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #02b9d6;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .event-card {
+      background: #151515;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .event-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 6px var(--accent);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      nav a {
+        margin: 0 0.5rem;
+      }
     }
   </style>
 </head>
-  <div class="intro-text">
-    <p>Hi, I'm Jess. Thank you for your interest!</p>
-    <p>Please contact me for specific requests. You can do so through Instagram, Facebook, or email.</p>
-  </div>
-  <h1>Jessie 3D Prints</h1>
-  <div class="links-container">
-    <a href="https://instagram.com/jessie3dprints" target="_blank" rel="noopener" class="link-button">Instagram</a>
-    <a href="https://www.facebook.com/marketplace/profile/543457061/" target="_blank" rel="noopener" class="link-button">Facebook</a>
-    <a href="mailto:jesseyarnall@gmail.com" class="link-button">Email Me</a>
-  </div>
+<body>
+  <header>
+    <img src="your-logo.png" alt="Jessie 3D Prints Logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <img src="your-logo.png" alt="Jessie 3D Prints Logo">
+    <h1>Jessie 3D Prints</h1>
+    <p>3D printed collectibles, retro gaming art, and pop culture creations.  
+       Each piece is designed and printed with care — blending nostalgia and modern design.  
+       Based in South Jersey.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery Showcase</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="placeholder.jpg" alt="Pokeball Example">
+        <h3>Pokémon Ball Collection</h3>
+        <p>Custom printed designs inspired by your favorite Pokémon.</p>
+        <a href="mailto:jesseyarnall@gmail.com?subject=Request%20Item:%20Pokémon%20Ball%20Collection" class="btn">Request Item</a>
+      </div>
+      <div class="card">
+        <img src="placeholder.jpg" alt="Hueforge Example">
+        <h3>Hueforge Art Prints</h3>
+        <p>Layered color illusions that pop in any room.</p>
+        <a href="mailto:jesseyarnall@gmail.com?subject=Request%20Item:%20Hueforge%20Art%20Print" class="btn">Request Item</a>
+      </div>
+      <div class="card">
+        <img src="placeholder.jpg" alt="Wall Art">
+        <h3>Retro Wall Art</h3>
+        <p>Pixel-perfect nostalgia: Mario, Zelda, and more.</p>
+        <a href="mailto:jesseyarnall@gmail.com?subject=Request%20Item:%20Retro%20Wall%20Art" class="btn">Request Item</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div class="events">
+      <div class="event-card">
+        <h3>South Jersey GeekFest</h3>
+        <p>Come see Jessie 3D Prints in person!  
+        Explore new designs, exclusive art, and live demos.</p>
+        <p><strong>Date:</strong> October 26, 2025</p>
+        <p><strong>Location:</strong> Woodbury Heights Community Center, NJ</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Social</h2>
+    <p style="text-align:center;">Have a custom request or want to collaborate?<br>
+    Reach me at <a href="mailto:jesseyarnall@gmail.com">jesseyarnall@gmail.com</a><br>
+    or follow <a href="https://instagram.com/jessie3dprints" target="_blank">@jessie3dprints</a> on Instagram.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Jessie 3D Prints | Designed by Jessie Yarnall</p>
+  </footer>
 </body>
 </html>
