@@ -3,35 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Ball Videos</title>
+    <title>Pokémon Ball Videos & Gifs</title>
     <link rel="stylesheet" href="style.css"> 
+    <style>
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gif-container {
+            text-align: center;
+            padding: 10px;
+            background: #151515; /* Matching your card background */
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .gif-container h4 {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Video Showcase: Pokémon Ball Collection</h1>
-        <nav>
-            <a href="index.html">← Back to Gallery</a> 
-        </nav>
+        <h1>Pokémon Media Showcase</h1>
+        <nav><a href="index.html">← Back to Gallery</a></nav>
     </header>
 
-    <section class="video-grid">
-        <div class="video-container">
-            <h3>Shiny Mega Gengar</h3>
-            <iframe id="shiny-mega-gengar" src="https://imgur.com/a/CCuf2DK/embed?w=100%" width="100%" height="480" allowfullscreen="true" frameborder="0"></iframe>
+    <section id="pokeball-gifs">
+        <h2>Pokémon Ball GIF Showcase</h2>
+        <div class="gif-grid">
+            
+            <div class="gif-container">
+                <img src="pokemon/0001-Bulbasaur.gif" alt="Bulbasaur Pokeball">
+                <h4>Bulbasaur</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0001-Bulbasaur-Halloween.gif" alt="Bulbasaur Halloween Pokeball">
+                <h4>Bulbasaur (Halloween)</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0004-Charmander.gif" alt="Charmander Pokeball">
+                <h4>Charmander</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0008-Wartortle.gif" alt="Wartortle Pokeball">
+                <h4>Wartortle</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0025-Pikachu.gif" alt="Pikachu Pokeball">
+                <h4>Pikachu</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0026-Raichu-Mega-Y.gif" alt="Mega Raichu Y Pokeball">
+                <h4>Mega Raichu Y</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0039-Jigglypuff.gif" alt="Jigglypuff Pokeball">
+                <h4>Jigglypuff</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0059-Arcanine.gif" alt="Arcanine Pokeball">
+                <h4>Arcanine</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0094-Gengar-Mega-Shiny.gif" alt="Shiny Mega Gengar Pokeball">
+                <h4>Shiny Mega Gengar</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0133-Eevee.gif" alt="Eevee Pokeball">
+                <h4>Eevee</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0143-Snorlax.gif" alt="Snorlax Pokeball">
+                <h4>Snorlax</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0151-Mew.gif" alt="Mew Pokeball">
+                <h4>Mew</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0151-Mew-Shiny.gif" alt="Shiny Mew Pokeball">
+                <h4>Shiny Mew</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0249-Lugia.gif" alt="Lugia Pokeball">
+                <h4>Lugia</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0384-Rayquaza.gif" alt="Rayquaza Pokeball">
+                <h4>Rayquaza</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0448-Lucario.gif" alt="Lucario Pokeball">
+                <h4>Lucario</h4>
+            </div>
+            <div class="gif-container">
+                <img src="pokemon/0658-Greninja.gif" alt="Greninja Pokeball">
+                <h4>Greninja</h4>
+            </div>
+            
         </div>
-        
-        <div class="Greninja">
-            <h3>Greninja</h3>
-            <blockquote class="imgur-embed-pub" lang="en" data-id="a/FMKx7tU">
-                <a href="//imgur.com/a/FMKx7tU">View post on Imgur</a>
-            </blockquote>
-            <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-        </div>
-        
-        </section>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Jessie 3D Prints</p>
+        <p>© 2025 Jessie 3D Prints</p>
     </footer>
 </body>
 </html>
