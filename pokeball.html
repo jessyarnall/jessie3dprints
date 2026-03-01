@@ -16,20 +16,27 @@
         }
         .gif-container {
             text-align: center;
-            padding: 10px;
-            background: #151515; /* Matching your card background */
+            padding: 15px;
+            /* Using the new light card background variable */
+            background: var(--card-bg); 
             border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 128, 128, 0.1); /* Subtle teal border */
+            transition: 0.3s;
+        }
+        .gif-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 128, 128, 0.1);
         }
         .gif-container img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         .gif-container h4 {
-            color: var(--text);
-            font-size: 0.9rem;
+            /* Using Navy for headings and Teal for the Pokéball name */
+            color: var(--accent-teal); 
+            font-size: 1rem;
             margin-top: 5px;
         }
     </style>
