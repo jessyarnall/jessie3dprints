@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap');
 
 :root {
-    --bg: #0e0e0e;
-    --accent: #00e0ff;
-    --text: #f1f1f1;
-    --muted: #888;
+    /* New Brand Palette */
+    --bg: #ffffff;             /* Clean White Background */
+    --accent-teal: #008080;    /* Deep Teal Main Brand Color */
+    --accent-orange: #ff7f50;  /* Sunset Orange for '3D' & Action */
+    --navy: #000080;           /* Professional Navy for Text */
+    --text: #333333;           /* Dark Grey for Readability */
+    --muted: #708090;          /* Slate Grey for Secondary Info */
+    --card-bg: #f9f9f9;        /* Off-white for section subtle contrast */
 }
 
 * {
@@ -25,41 +29,38 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.95); /* Light blurred header */
     backdrop-filter: blur(6px);
     position: sticky;
     top: 0;
     z-index: 10;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 128, 128, 0.1); /* Teal border */
 }
 
 header img {
     height: 50px;
 }
 
-
 nav a {
     margin-left: 1.5rem;
     text-decoration: none;
-    color: var(--accent);
+    color: var(--accent-teal); /* Teal Navigation */
     transition: 0.3s;
     font-weight: 600;
 }
 
 nav a:hover {
-    color: var(--accent);
-    text-shadow: 0 0 8px var(--accent);
+    color: var(--accent-orange); /* Orange Hover */
 }
 
 a {
-color: var(--accent);
-text-decoration: none; /* This is optional, but common for styling links */
-transition: 0.3s;
+    color: var(--accent-teal);
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 a:hover {
-    color: #02b9d6;
-    text-shadow: 0 0 6px var(--accent);
+    color: var(--accent-orange);
 }
 
 section {
@@ -69,10 +70,14 @@ section {
 }
 
 h1, h2 {
-    color: var(--accent);
+    color: var(--navy); /* Navy Headings */
     text-align: center;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 10px var(--accent);
+}
+
+/* Specific Highlight for your niche title */
+h1 span {
+    color: var(--accent-orange); /* Sunset Orange Highlight */
 }
 
 .hero {
@@ -87,13 +92,13 @@ h1, h2 {
 .hero img {
     max-width: 220px;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px var(--accent));
+    /* Removed drop-shadow glow to maintain minimalist look */
 }
 
 .hero p {
     max-width: 600px;
     font-size: 1.1rem;
-    color: var(--muted);
+    color: var(--muted); /* Slate Grey Muted Text */
 }
 
 .gallery {
@@ -103,8 +108,8 @@ h1, h2 {
 }
 
 .card {
-    background: #151515;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 128, 128, 0.05);
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
@@ -113,8 +118,8 @@ h1, h2 {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+    border-color: var(--accent-teal);
+    box-shadow: 0 10px 20px rgba(0, 128, 128, 0.1);
 }
 
 .card img {
@@ -124,15 +129,15 @@ h1, h2 {
 }
 
 .card h3 {
-    color: var(--accent);
+    color: var(--accent-teal);
     margin-bottom: 0.5rem;
 }
 
 .btn {
     display: inline-block;
     padding: 0.6rem 1.2rem;
-    color: var(--bg);
-    background: var(--accent);
+    color: #fff;
+    background: var(--accent-teal); /* Teal Button */
     border: none;
     border-radius: 25px;
     text-decoration: none;
@@ -141,8 +146,8 @@ h1, h2 {
 }
 
 .btn:hover {
-    background: #02b9d6;
-    box-shadow: 0 0 10px var(--accent);
+    background: var(--accent-orange); /* Orange Hover for Action */
+    box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
 }
 
 .events {
@@ -152,31 +157,32 @@ h1, h2 {
 }
 
 .event-card {
-    background: #151515;
+    background: var(--card-bg);
     padding: 1rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 128, 128, 0.05);
 }
 
 .event-card h3 {
-    color: var(--accent);
+    color: var(--navy);
     margin-bottom: 0.5rem;
 }
 
 footer {
     text-align: center;
     padding: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border-top: 1px solid rgba(0, 128, 128, 0.1);
     color: var(--muted);
 }
 
 footer a {
-    color: var(--accent);
+    color: var(--accent-teal);
     text-decoration: none;
 }
 
 footer a:hover {
-    text-shadow: 0 0 6px var(--accent);
+    color: var(--accent-orange);
 }
 
 @media (max-width: 700px) {
